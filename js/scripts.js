@@ -42,12 +42,13 @@ function anyChecked(name) {
 }
 
 $(document).ready(function(){
-  // on load, disable toppings and pre-made buttons
+  // on load, disable choose size button, custom pie btn, and pre-made button
   disableSubmit("add-custom-pie")
+  disableSubmit("choose-size")
   // disableSubmit("add-pre-made-pie")
 
-  // On click of any of the labels for a given question (eg. toppings), run the function that: 1) runs the if anyChecked, then enableSubmit
-  $("#toppings-question").click(function(e) {
+  // enable toppings pie iff at least 1 topping is checked
+  $("#toppings-question").click(function() {
     var questionName = "[name=toppings]"
     var submitName = "add-custom-pie"
     if (anyChecked(questionName)) {
@@ -55,6 +56,14 @@ $(document).ready(function(){
     }
   })
 
+  // enable choose-size button iff size is chosen
+  $("#pie-size-question").click(function() {
+    var questionName = "[name=pie-size]"
+    var submitName = "choose-size"
+    if (anyChecked(questionName)) {
+      enableSubmit(submitName)
+    }
+  })
 
   $("#add-custom-pie").click(function(e) {
     e.preventDefault()
@@ -65,5 +74,6 @@ $(document).ready(function(){
     var size = $("input[name=pie-size]:checked").val()
     var totalCost = 0
     totalCost += makePieReturnCost(size, toppingsArr)
+    console.log(totalCost)
   })
 })
