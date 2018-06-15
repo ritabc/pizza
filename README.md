@@ -27,7 +27,10 @@ A site for ordering pizzas
 * User can input properties and size, and cost is output
 * User interface displays question (checkboxes?) and size options
 * Checkbox answers are fed to toppingsArr
-* Once questions answered, user interface displays cost
+* Validate pie size question as required
+* Add column next to toppings question: Pre-made Pizzas
+* Add functionality: 3 'Add Pie' btns (Add plain cheese, Add custom pie, Add pre-made pie)
+  - If 2nd or 3rd buttons pressed, user must have selected toppings or pre-made pie
 
 ## License
 
