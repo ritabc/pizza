@@ -6,7 +6,7 @@
 
 ## Description
 
-
+A site for ordering pizzas
 
 ## Setup/Contribution Requirements
 
@@ -32,4 +32,4 @@
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Name**
+Copyright (c) 2018 **Rita Bennett-Chew**
