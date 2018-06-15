@@ -1,8 +1,8 @@
-# Project Title
+# Pizza Ordering Site
 
-#### Epicodus Intro to Programming: Lesson, Date
+#### Epicodus Intro to Programming: Independent Project, 6/15/2018
 
-#### By NAME
+#### By Rita Bennett-Chew
 
 ## Description
 
@@ -20,9 +20,13 @@
 * Bootstrap x.x.x
 * jQuery 3.3.1
 
-## Links
-
-* 
+## Specs/Steps
+* Create a pizza constructor
+* Give it properties of a toppings array and size
+* Create a prototype method for determining cost
+* User can input properties and size, and cost is output
+* User interface displays question (checkboxes?) and size options
+* Once questions answered, user interface displays cost
 
 ## License
 
