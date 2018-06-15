@@ -12,3 +12,10 @@ function Pie(size, toppingsArr) {
 Pie.prototype.findCost = function() {
   return 10 + this.pieSize + this.pieToppings.length
 }
+
+$(document).ready(function(){
+  $("#add-one-pie").click(function(e) {
+    e.preventDefault()
+
+  })
+})

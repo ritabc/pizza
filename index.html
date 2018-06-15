@@ -17,7 +17,7 @@
     </div>
     <div class="order">
       <form id="order-form">
-        <fieldset id="toppingsQuestion">
+        <fieldset id="toppings-question">
           <legend>Choose your toppings</legend>
           <div>
             <input type="checkbox" id="spinach" name="toppings" value="spinach">
@@ -52,6 +52,22 @@
             <label for="walnuts">Walnuts</label>
           </div>
         </fieldset>
+        <fieldset id="pie-size-question">
+          <legend>Choose a pie size</legend>
+          <div>
+            <input type="radio" id="large" name="pie-size" value="large">
+            <label for="large">Large</label>
+          </div>
+          <div>
+            <input type="radio" id="medium" name="pie-size" value="medium">
+            <label for="medium">Medium</label>
+          </div>
+          <div>
+            <input type="radio" id="small" name="pie-size" value="small">
+            <label for="small">Small</label>
+          </div>
+        </fieldset>
+        <button type="submit" id="add-one-pie" class="btn btn-primary">Add a pie</button>
       </form>
     </div>
   </div>

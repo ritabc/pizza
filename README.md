@@ -26,6 +26,7 @@ A site for ordering pizzas
 * Create a prototype method for determining cost
 * User can input properties and size, and cost is output
 * User interface displays question (checkboxes?) and size options
+* Checkbox answers are fed to toppingsArr
 * Once questions answered, user interface displays cost
 
 ## License
