@@ -31,6 +31,7 @@ A site for ordering pizzas
 * Add column next to toppings question: Pre-made Pizzas
 * Add functionality: 3 'Add Pie' btns (Add plain cheese, Add custom pie, Add pre-made pie)
   - If 2nd or 3rd buttons pressed, user must have selected toppings or pre-made pie
+* show select size first, then user has option to add custom or pre-made pie. After hitting 'add' btn, user has option to add another
 
 ## License
 

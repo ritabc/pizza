@@ -34,44 +34,100 @@
         </fieldset>
         <button type="submit" id="choose-size" class="btn btn-primary">Select a type of Pie</button>
       </form>
-      <form id="pie-type-form">
-        <fieldset id="toppings-question">
-          <legend>Choose your toppings</legend>
-          <div>
-            <input type="checkbox" id="spinach" name="toppings" value="spinach">
-            <label for="spinach">Spinach</label>
-          </div>
-          <div>
-            <input type="checkbox" id="sun-dried-tomatoes" name="toppings" value="sun-dried-tomatoes">
-            <label for="sun-dried-tomatoes">Sun Dried Tomatoes</label>
-          </div>
-          <div>
-            <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
-            <label for="mushrooms">Mushrooms</label>
-          </div>
-          <div>
-            <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
-            <label for="pineapple">Pineapple</label>
-          </div>
-          <div>
-            <input type="checkbox" id="rosemary-potatoes" name="toppings" value="rosemary-potatoes">
-            <label for="rosemary-potatoes">Rosemary Potatoes</label>
-          </div>
-          <div>
-            <input type="checkbox" id="cauliflower" name="toppings" value="cauliflower">
-            <label for="cauliflower">Cauliflower</label>
-          </div>
-          <div>
-            <input type="checkbox" id="carmelized-onions" name="toppings" value="carmelized-onions">
-            <label for="carmelized-onions">Carmelized Onions</label>
-          </div>
-          <div>
-            <input type="checkbox" id="walnuts" name="toppings" value="walnuts">
-            <label for="walnuts">Walnuts</label>
-          </div>
-        </fieldset>
-        <button type="submit" id="add-custom-pie" class="btn btn-primary">Add a pie</button>
-      </form>
+      <div class="row choose-type">
+        <div class="col-sm-6">
+          <form id="custom-pie-form">
+          <fieldset id="toppings-question">
+            <legend>Customize a pie by choosing your own toppings</legend>
+            <div>
+              <input type="checkbox" id="spinach" name="toppings" value="spinach">
+              <label for="spinach">Spinach</label>
+            </div>
+            <div>
+              <input type="checkbox" id="sun-dried-tomatoes" name="toppings" value="sun-dried-tomatoes">
+              <label for="sun-dried-tomatoes">Sun Dried Tomatoes</label>
+            </div>
+            <div>
+              <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+              <label for="mushrooms">Mushrooms</label>
+            </div>
+            <div>
+              <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
+              <label for="pineapple">Pineapple</label>
+            </div>
+            <div>
+              <input type="checkbox" id="rosemary-potatoes" name="toppings" value="rosemary-potatoes">
+              <label for="rosemary-potatoes">Rosemary Potatoes</label>
+            </div>
+            <div>
+              <input type="checkbox" id="cauliflower" name="toppings" value="cauliflower">
+              <label for="cauliflower">Cauliflower</label>
+            </div>
+            <div>
+              <input type="checkbox" id="carmelized-onions" name="toppings" value="carmelized-onions">
+              <label for="carmelized-onions">Carmelized Onions</label>
+            </div>
+            <div>
+              <input type="checkbox" id="walnuts" name="toppings" value="walnuts">
+              <label for="walnuts">Walnuts</label>
+            </div>
+            <div>
+              <input type="checkbox" id="blue-cheese" name="toppings" value="blue-cheese">
+              <label for="blue-cheese">Blue Cheese</label>
+            </div>
+            <div>
+              <input type="checkbox" id="kale" name="toppings" value="kale">
+              <label for="kale">Kale</label>
+            </div>
+          </fieldset>
+          <button type="submit" id="add-custom-pie" class="btn btn-primary">Add the pie</button>
+        </form>
+        </div>
+        <div class="col-sm-6">
+          <form id="pre-made-pie-form">
+          <fieldset id="pre-made-question">
+            <legend>Choose one of our pre-made options</legend>
+            <div>
+              <label for="margherita">
+                <input type="radio" id="margherita" name="pre-made" value="margherita">
+              Margherita: <span class="regular-text">tomato base, mozzarella, and fresh basil</span>
+              </label>
+            </div>
+            <div>
+              <label for="hawaiian">
+                <input type="radio" id="hawaiian" name="pre-made" value="hawaiian">
+                Hawaiian: <span class="regular-text">tomato base, pineapple, mozarella, oregano, garlic, mushrooms, and corn</span>
+              </label>
+            </div>
+            <div>
+              <label for="potato">
+                <input type="radio" id="potato" name="pre-made" value="potato">
+                Potato: <span class="regular-text">Rosemary potatoes, herbs, garlic, and olive oil, topped with mozarella and parmesean</span>
+              </label>
+            </div>
+            <div>
+              <label for="lemon-feta">
+                <input type="radio" id="lemon-feta" name="pre-made" value="lemon-feta">
+                Lemon Feta: <span class="regular-text">Zucchini, lemon, chili, feta, and mint</span>
+              </label>
+            </div>
+            <div>
+              <label for="egg">
+                <input type="radio" id="egg" name="pre-made" value="egg">
+                Egg: <span class="regular-text">Spinach, egg, and pecorino</span>
+              </label>
+            </div>
+            <div>
+              <label for="pear">
+                <input type="radio" id="pear" name="pre-made" value="pear">
+                Pear: <span class="regular-text">gorganzola, pear, carmelised onion, and walnut</span>
+              </label>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary" id="add-pre-made-pie">Add the pie</button>
+        </form>
+        </div>
+      </div>
     </div>
   </div>
 </body>

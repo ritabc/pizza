@@ -1,5 +1,5 @@
-function Pie(size, toppingsArr) {
-  this.pieToppings = toppingsArr
+function Pie(size, type) {
+  this.pieType = type
   if (size === "large") {
     this.pieSize = 3
   } else if (size === "medium") {
@@ -10,11 +10,15 @@ function Pie(size, toppingsArr) {
 }
 
 Pie.prototype.calcCost = function() {
-  return (10 + this.pieSize + this.pieToppings.length)
+  if (typeof(this.pieType) === "object") {
+    return (10 + this.pieSize + this.pieType.length)
+  } else if (typeof(this.pieType) === "string") {
+    return 10 + this.pieSize + 2.5
+  }
 }
 
-function makePieReturnCost(size, toppingsArr) {
-  newPie = new Pie(size, toppingsArr)
+function makePieReturnCost(size, type) {
+  newPie = new Pie(size, type)
   return newPie.calcCost()
 }
 
@@ -45,7 +49,10 @@ $(document).ready(function(){
   // on load, disable choose size button, custom pie btn, and pre-made button
   disableSubmit("add-custom-pie")
   disableSubmit("choose-size")
-  // disableSubmit("add-pre-made-pie")
+  disableSubmit("add-pre-made-pie")
+
+  // initiate totalCost
+  var totalCost = 0
 
   // enable toppings pie iff at least 1 topping is checked
   $("#toppings-question").click(function() {
@@ -65,6 +72,15 @@ $(document).ready(function(){
     }
   })
 
+  // enable add pre-made button iff 1 is chosen
+  $("#pre-made-question").click(function(){
+    var questionName = "[name=pre-made]"
+    var submitName = "add-pre-made-pie"
+    if (anyChecked(questionName)) {
+      enableSubmit(submitName)
+    }
+  })
+
   $("#add-custom-pie").click(function(e) {
     e.preventDefault()
     var toppingsArr = []
@@ -72,8 +88,29 @@ $(document).ready(function(){
       toppingsArr.push($(this).val())
     })
     var size = $("input[name=pie-size]:checked").val()
-    var totalCost = 0
     totalCost += makePieReturnCost(size, toppingsArr)
     console.log(totalCost)
   })
+
+  $("#add-pre-made-pie").click(function(e){
+    e.preventDefault()
+    var type = $("input[name=pre-made]:checked").val()
+    var size = "large"
+    totalCost += makePieReturnCost(size, type)
+    console.log(totalCost)
+  })
+
 })
+
+
+// comments:
+onLoad:
+  onClickChooseSize:
+    hide size question
+    show row with types
+    return size
+  onClickChooseToppings:
+    hide row with pie types
+    show section: would you like to order another?
+    return toppingsArray
+  onClickChooseCustom:
