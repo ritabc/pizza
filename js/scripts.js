@@ -9,8 +9,16 @@ function Pie(size, toppingsArr) {
   } else {console.log("Please enter the size of the pie")}
 }
 
-Pie.prototype.findCost = function() {
-  return 10 + this.pieSize + this.pieToppings.length
+Pie.prototype.calcCost = function() {
+  console.log(this.pieToppings, this.pieToppings.length)
+  console.log(this.pieSize, typeof(this.pieSize))
+  return (10 + this.pieSize + this.pieToppings.length)
+}
+
+function makePieReturnCost(size, toppingsArr) {
+  newPie = new Pie(size, toppingsArr)
+  console.log(newPie, newPie.calcCost)
+  return newPie.calcCost()
 }
 
 $(document).ready(function(){
@@ -20,6 +28,9 @@ $(document).ready(function(){
     $("input[name=toppings]:checked").each(function(){
       toppingsArr.push($(this).val())
     })
-    console.log(toppingsArr)
+    var size = $("input[name=pie-size]:checked").val()
+    var totalCost = 0
+    totalCost += makePieReturnCost(size, toppingsArr)
+    console.log(totalCost)
   })
 })
