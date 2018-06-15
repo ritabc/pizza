@@ -33,6 +33,10 @@ A site for ordering pizzas
   - If 2nd or 3rd buttons pressed, user must have selected toppings or pre-made pie
 * show select size first, then user has option to add custom or pre-made pie. After hitting 'add' btn, user has option to add another
 
+## Next steps
+* Display list of pizzas ordered as links that can be clicked on for details
+* Add images
+
 ## License
 
 This software is licensed under the MIT license.
