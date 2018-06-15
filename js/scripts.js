@@ -16,6 +16,10 @@ Pie.prototype.findCost = function() {
 $(document).ready(function(){
   $("#add-one-pie").click(function(e) {
     e.preventDefault()
-
+    var toppingsArr = []
+    $("input[name=toppings]:checked").each(function(){
+      toppingsArr.push($(this).val())
+    })
+    console.log(toppingsArr)
   })
 })
