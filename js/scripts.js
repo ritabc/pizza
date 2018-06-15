@@ -135,6 +135,7 @@ $(document).ready(function(){
   $("#checkout").click(function(e) {
     e.preventDefault()
     $("#total-cost").text(totalCost)
+    $("#question-another").hide()
     $("#order-total").show()
   })
 
