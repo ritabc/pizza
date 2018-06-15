@@ -45,14 +45,25 @@ function anyChecked(name) {
   }
 }
 
+function getSize(name) {
+  var size
+  $(name).each(function(index, item) {
+    if ($(item).is(":checked")) {
+      size = $(item).val()
+    }
+  })
+  return size
+}
+
 $(document).ready(function(){
   // on load, disable choose size button, custom pie btn, and pre-made button
   disableSubmit("add-custom-pie")
   disableSubmit("choose-size")
   disableSubmit("add-pre-made-pie")
 
-  // initiate totalCost
+  // initiate 'global var's'
   var totalCost = 0
+  var size
 
   // enable toppings pie iff at least 1 topping is checked
   $("#toppings-question").click(function() {
@@ -70,6 +81,7 @@ $(document).ready(function(){
     if (anyChecked(questionName)) {
       enableSubmit(submitName)
     }
+
   })
 
   // enable add pre-made button iff 1 is chosen
@@ -81,36 +93,62 @@ $(document).ready(function(){
     }
   })
 
+  // on submit of Choose-size:
+  $("#choose-size").click(function(e) {
+    e.preventDefault()
+    size = getSize("[name=pie-size]")
+    $("#pie-size-form").hide()
+    $("#choose-type").show()
+  })
+
   $("#add-custom-pie").click(function(e) {
     e.preventDefault()
     var toppingsArr = []
     $("input[name=toppings]:checked").each(function(){
       toppingsArr.push($(this).val())
     })
-    var size = $("input[name=pie-size]:checked").val()
     totalCost += makePieReturnCost(size, toppingsArr)
-    console.log(totalCost)
+    console.log(totalCost);
+    $("#choose-type").hide()
+    $("#question-another").show()
+    $("input[name=toppings]").each(function() {
+      $(this).prop("checked", false)
+    })
   })
+
 
   $("#add-pre-made-pie").click(function(e){
     e.preventDefault()
     var type = $("input[name=pre-made]:checked").val()
-    var size = "large"
     totalCost += makePieReturnCost(size, type)
-    console.log(totalCost)
+    console.log(totalCost);
+    $("#choose-type").hide()
+    $("#question-another").show()
+  })
+
+  $("#order-another").click(function(e) {
+    e.preventDefault()
+    $("#pie-size-form").show()
+    $("#question-another").hide()
+  })
+
+  $("#checkout").click(function(e) {
+    e.preventDefault()
+    $("#total-cost").text(totalCost)
+    $("#order-total").show()
   })
 
 })
 
 
 // comments:
-onLoad:
-  onClickChooseSize:
-    hide size question
-    show row with types
-    return size
-  onClickChooseToppings:
-    hide row with pie types
-    show section: would you like to order another?
-    return toppingsArray
-  onClickChooseCustom:
+// onLoad:
+//   onClickChooseSize:
+//     hide size question
+//     show row with types
+//     return size
+//   onClickChooseToppings:
+//     hide row with pie types
+//     show section: would you like to order another?
+//     return toppingsArray
+//   onClickChooseCustom:

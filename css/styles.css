@@ -2,6 +2,14 @@
   font-weight: normal;
 }
 
-.choose-type  {
-  display:none;
+#choose-type  {
+  display: none;
+}
+
+#question-another {
+  display: none;
+}
+
+#order-total {
+  display: none;
 }

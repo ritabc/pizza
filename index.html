@@ -32,56 +32,56 @@
             <label for="small">Small</label>
           </div>
         </fieldset>
-        <button type="submit" id="choose-size" class="btn btn-primary">Select a type of Pie</button>
+        <button type="submit" id="choose-size" class="btn btn-primary">Proceed to select a type of Pie</button>
       </form>
-      <div class="row choose-type">
+      <div class="row" id="choose-type">
         <div class="col-sm-6">
           <form id="custom-pie-form">
-          <fieldset id="toppings-question">
-            <legend>Customize a pie by choosing your own toppings</legend>
-            <div>
-              <input type="checkbox" id="spinach" name="toppings" value="spinach">
-              <label for="spinach">Spinach</label>
-            </div>
-            <div>
-              <input type="checkbox" id="sun-dried-tomatoes" name="toppings" value="sun-dried-tomatoes">
-              <label for="sun-dried-tomatoes">Sun Dried Tomatoes</label>
-            </div>
-            <div>
-              <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
-              <label for="mushrooms">Mushrooms</label>
-            </div>
-            <div>
-              <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
-              <label for="pineapple">Pineapple</label>
-            </div>
-            <div>
-              <input type="checkbox" id="rosemary-potatoes" name="toppings" value="rosemary-potatoes">
-              <label for="rosemary-potatoes">Rosemary Potatoes</label>
-            </div>
-            <div>
-              <input type="checkbox" id="cauliflower" name="toppings" value="cauliflower">
-              <label for="cauliflower">Cauliflower</label>
-            </div>
-            <div>
-              <input type="checkbox" id="carmelized-onions" name="toppings" value="carmelized-onions">
-              <label for="carmelized-onions">Carmelized Onions</label>
-            </div>
-            <div>
-              <input type="checkbox" id="walnuts" name="toppings" value="walnuts">
-              <label for="walnuts">Walnuts</label>
-            </div>
-            <div>
-              <input type="checkbox" id="blue-cheese" name="toppings" value="blue-cheese">
-              <label for="blue-cheese">Blue Cheese</label>
-            </div>
-            <div>
-              <input type="checkbox" id="kale" name="toppings" value="kale">
-              <label for="kale">Kale</label>
-            </div>
-          </fieldset>
-          <button type="submit" id="add-custom-pie" class="btn btn-primary">Add the pie</button>
-        </form>
+            <fieldset id="toppings-question">
+              <legend>Customize a pie by choosing your own toppings</legend>
+              <div>
+                <input type="checkbox" id="spinach" name="toppings" value="spinach">
+                <label for="spinach">Spinach</label>
+              </div>
+              <div>
+                <input type="checkbox" id="sun-dried-tomatoes" name="toppings" value="sun-dried-tomatoes">
+                <label for="sun-dried-tomatoes">Sun Dried Tomatoes</label>
+              </div>
+              <div>
+                <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+                <label for="mushrooms">Mushrooms</label>
+              </div>
+              <div>
+                <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
+                <label for="pineapple">Pineapple</label>
+              </div>
+              <div>
+                <input type="checkbox" id="rosemary-potatoes" name="toppings" value="rosemary-potatoes">
+                <label for="rosemary-potatoes">Rosemary Potatoes</label>
+              </div>
+              <div>
+                <input type="checkbox" id="cauliflower" name="toppings" value="cauliflower">
+                <label for="cauliflower">Cauliflower</label>
+              </div>
+              <div>
+                <input type="checkbox" id="carmelized-onions" name="toppings" value="carmelized-onions">
+                <label for="carmelized-onions">Carmelized Onions</label>
+              </div>
+              <div>
+                <input type="checkbox" id="walnuts" name="toppings" value="walnuts">
+                <label for="walnuts">Walnuts</label>
+              </div>
+              <div>
+                <input type="checkbox" id="blue-cheese" name="toppings" value="blue-cheese">
+                <label for="blue-cheese">Blue Cheese</label>
+              </div>
+              <div>
+                <input type="checkbox" id="kale" name="toppings" value="kale">
+                <label for="kale">Kale</label>
+              </div>
+            </fieldset>
+            <button type="submit" id="add-custom-pie" class="btn btn-primary">Add the custom pie</button>
+          </form>
         </div>
         <div class="col-sm-6">
           <form id="pre-made-pie-form">
@@ -124,10 +124,19 @@
               </label>
             </div>
           </fieldset>
-          <button type="submit" class="btn btn-primary" id="add-pre-made-pie">Add the pie</button>
+          <button type="submit" class="btn btn-primary" id="add-pre-made-pie">Add the pre-made pie</button>
         </form>
         </div>
       </div>
+      <div id="question-another">
+        <form>
+          <button type="submit" class="btn btn-primary" id="order-another">Order Another Pie</button>
+          <button type="submit" class="btn btn-primary" id="checkout">Proceed to Checkout</button>
+        </form>
+      </div>
+    </div>
+    <div id="order-total">
+      <h2>Your total is: $<span id="total-cost"></span></h2>
     </div>
   </div>
 </body>
